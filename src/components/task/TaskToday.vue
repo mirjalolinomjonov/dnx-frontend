@@ -23,7 +23,9 @@ const data: ITask = inject('taskToday') as ITask
       <hr class="text-secondary-light" />
       <TaskDetail />
     </div>
-    <AppButton>Go To Detail</AppButton>
+    <router-link :to="{ name: 'TasksId', params: { id: data.id } }">
+      <AppButton>Go To Detail</AppButton>
+    </router-link>
   </Card>
 </template>
 

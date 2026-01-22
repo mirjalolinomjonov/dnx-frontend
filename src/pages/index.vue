@@ -70,7 +70,7 @@ const title = computed<string>(() => {
       <div
         class="px-6 pb-6 md:px-8 md:pb-8 pt-4 space-y-8 max-h-[calc(100dvh-132px)] overflow-y-auto"
       >
-        <WelcomeHeader v-if="0" :title="title" :is-show-subtitle="isHome" />
+        <WelcomeHeader class="md:hidden" :title="title" :is-show-subtitle="isHome" />
         <section class="flex-col 2md:flex-row! flex gap-6">
           <RunningTask :count="45" :total="100" :percentage="45" />
           <LineChart />

@@ -1,8 +1,16 @@
 <script setup lang="ts">
 import { ref, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import VideoController from './VideoController.vue'
+import AppIcon from '../shared/app-icon/AppIcon.vue'
 
 defineProps<{ url: string }>()
+
+const SEEK_STEP = 15 // seconds
+const VOLUME_STEP = 5 // percent
+const showBackward = ref(false)
+const showForward = ref(false)
+let backwardTimeout: ReturnType<typeof setTimeout> | null = null
+let forwardTimeout: ReturnType<typeof setTimeout> | null = null
 
 const video = ref<HTMLVideoElement | null>(null)
 const videoContainer = ref<HTMLDivElement | null>(null)
@@ -106,6 +114,68 @@ function onMouseLeave() {
   }, 1500)
 }
 
+// --- ICON VISIBILITY HELPERS ---
+function triggerBackward() {
+  showBackward.value = true
+  if (backwardTimeout) clearTimeout(backwardTimeout)
+  backwardTimeout = setTimeout(() => {
+    showBackward.value = false
+    backwardTimeout = null
+  }, 1000) // 1 soniya ko‘rsatiladi
+}
+
+function triggerForward() {
+  showForward.value = true
+  if (forwardTimeout) clearTimeout(forwardTimeout)
+  forwardTimeout = setTimeout(() => {
+    showForward.value = false
+    forwardTimeout = null
+  }, 1000)
+}
+
+function handleKeydown(e: KeyboardEvent): void {
+  const target = e.target as HTMLElement
+  // Input, textarea ichida bo‘lsa ishlamasin
+  if (['INPUT', 'TEXTAREA'].includes(target.tagName)) return
+  if (!video.value) return
+
+  switch (e.code) {
+    case 'Space':
+      e.preventDefault()
+      onPlay()
+      break
+
+    case 'KeyF':
+      e.preventDefault()
+      onFullscreen()
+      break
+
+    case 'ArrowUp':
+      e.preventDefault()
+      volume.value = Math.min(100, volume.value + VOLUME_STEP)
+      video.value.volume = volume.value / 100
+      break
+
+    case 'ArrowDown':
+      e.preventDefault()
+      volume.value = Math.max(0, volume.value - VOLUME_STEP)
+      video.value.volume = volume.value / 100
+      break
+
+    case 'ArrowRight':
+      e.preventDefault()
+      video.value.currentTime = Math.min(duration.value, video.value.currentTime + SEEK_STEP)
+      triggerForward()
+      break
+
+    case 'ArrowLeft':
+      e.preventDefault()
+      video.value.currentTime = Math.max(0, video.value.currentTime - SEEK_STEP)
+      triggerBackward()
+      break
+  }
+}
+
 // LIFECYCLE HOOKS
 onMounted(() => {
   if (!video.value) return
@@ -114,6 +184,8 @@ onMounted(() => {
   video.value.addEventListener('loadedmetadata', handleLoadedMetadata)
   video.value.addEventListener('play', handlePlay)
   video.value.addEventListener('pause', handlePause)
+
+  window.addEventListener('keydown', handleKeydown)
 })
 
 onBeforeUnmount(() => {
@@ -123,6 +195,8 @@ onBeforeUnmount(() => {
   video.value.removeEventListener('loadedmetadata', handleLoadedMetadata)
   video.value.removeEventListener('play', handlePlay)
   video.value.removeEventListener('pause', handlePause)
+
+  window.removeEventListener('keydown', handleKeydown)
 })
 </script>
 
@@ -138,6 +212,23 @@ onBeforeUnmount(() => {
       <source :src="url" type="video/mp4" />
       Your browser does not support HTML video.
     </video>
+
+    <div>
+      <transition name="fade">
+        <AppIcon
+          v-if="showBackward"
+          name="backward-15"
+          class="absolute top-1/2 left-40 -translate-y-1/2"
+        />
+      </transition>
+      <transition name="fade">
+        <AppIcon
+          v-if="showForward"
+          name="forward-15"
+          class="absolute top-1/2 right-40 -translate-y-1/2"
+        />
+      </transition>
+    </div>
     <transition name="fade">
       <VideoController
         v-show="isShowController"

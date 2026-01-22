@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import Avatar from '../shared/Avatar.vue'
+const router = useRouter()
 </script>
 
 <template>
-  <section class="flex-center-between bg-white px-12 py-6">
+  <section class="flex-center-between bg-white px-6 lg:px-12 py-6">
     <div class="inline-flex-center gap-3">
+      <button class="lg:hidden" @click="router.go(-1)">
+        <AppIcon name="arrow-back" />
+      </button>
       <Avatar url="https://i.pravatar.cc/150?img=50" />
       <div>
         <h3 class="title text-[14px]! text-secondary-500">Angelie Crison</h3>

@@ -61,12 +61,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex-col h-full">
-    <ChatItemHeader />
-    <div
-      ref="conversationRef"
-      class="p-6 md:p-8 flex-col gap-5.75 max-h-[calc(100dvh-297px)] overflow-y-auto"
-    >
+  <div class="flex-col h-full max-h-dvh lg:max-h-[calc(100dvh-117px)] overflow-y-auto">
+    <ChatItemHeader class="sticky top-0 z-90" />
+
+    <div ref="conversationRef" class="p-6 md:p-8 flex-col gap-5.75">
       <!-- date -->
       <div class="flex">
         <span class="mx-auto px-3 py-2 rounded-base bg-secondary-500 title text-[14px]! text-white">
@@ -76,7 +74,7 @@ onMounted(() => {
       <ChatMessageItem v-for="msg in messages" :key="msg.id" :msg="msg" />
     </div>
 
-    <ChatTextarea @send="onSend" />
+    <ChatTextarea class="sticky bottom-0 z-90" @send="onSend" />
   </div>
 </template>
 

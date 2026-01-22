@@ -24,6 +24,7 @@ function onInput(e: Event) {
 
 <style scoped>
 .custom-range {
+  pointer-events: none;
   -webkit-appearance: none;
   width: 100%;
   height: 10px;

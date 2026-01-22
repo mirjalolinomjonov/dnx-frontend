@@ -18,7 +18,7 @@ const route = useRoute()
 // DATA
 const userName = 'Hi, Dennis Nzioki'
 const breakpoints = {
-  '640': {
+  '320': {
     slidesPerView: 1,
     spaceBetween: 0,
   },

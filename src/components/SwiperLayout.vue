@@ -21,7 +21,7 @@ interface IProps {
 withDefaults(defineProps<IProps>(), {
   slidesPerView: 2,
   breakpoints: () => ({
-    '640': {
+    '320': {
       slidesPerView: 1,
       spaceBetween: 0,
     },

@@ -6,6 +6,7 @@ defineProps<{ id: number }>()
 <template>
   <router-link
     :to="{ name: 'ChatId', params: { id } }"
+    exact-active-class="active"
     class="px-5 py-2.5 rounded-base hover:bg-secondary-50 flex-center gap-2"
   >
     <Avatar :url="`https://i.pravatar.cc/150?img=${id + 47}`" size="48px" />
@@ -25,4 +26,8 @@ defineProps<{ id: number }>()
   </router-link>
 </template>
 
-<style scoped></style>
+<style scoped>
+.active {
+  background: #fafafa;
+}
+</style>

@@ -64,12 +64,10 @@ const title = computed<string>(() => {
 </script>
 
 <template>
-  <div class="flex flex-wrap xl:flex-nowrap">
-    <div class="grow min-w-0">
-      <AppHeader />
-      <div
-        class="px-6 pb-6 md:px-8 md:pb-8 pt-4 space-y-8 max-h-[calc(100dvh-132px)] overflow-y-auto"
-      >
+  <div class="flex flex-wrap xl:flex-nowrap max-h-dvh overflow-y-auto">
+    <div class="min-w-0">
+      <AppHeader class="sticky top-0 z-100" />
+      <div class="px-6 pb-6 md:px-8 md:pb-8 pt-4 space-y-8">
         <WelcomeHeader class="md:hidden" :title="title" :is-show-subtitle="isHome" />
         <section class="flex-col 2md:flex-row! flex gap-6">
           <RunningTask :count="45" :total="100" :percentage="45" />
@@ -86,10 +84,9 @@ const title = computed<string>(() => {
             <TaskItem :id="item" />
           </swiper-slide>
         </SwiperLayout>
-        <HomeRightSidebar class="block xl:hidden" />
       </div>
     </div>
-    <HomeRightSidebar class="hidden xl:block" />
+    <HomeRightSidebar />
   </div>
 </template>
 

@@ -65,7 +65,7 @@ onMounted(() => {
     <ChatItemHeader />
     <div
       ref="conversationRef"
-      class="p-8 flex-col gap-5.75 max-h-[calc(100dvh-297px)] overflow-y-auto"
+      class="p-6 md:p-8 flex-col gap-5.75 max-h-[calc(100dvh-297px)] overflow-y-auto"
     >
       <!-- date -->
       <div class="flex">

@@ -25,9 +25,9 @@ const isTaskOrMentorPage = computed(() => {
 
 <template>
   <header
-    class="flex-center-between p-8 max-md:border-b max-md:border-secondary-light"
+    class="flex-center-between p-6 md:p-8 max-md:border-b max-md:border-secondary-light"
     :class="{
-      'bg-white lg:bg-transparent!': route.name === 'Home',
+      'bg-white lg:bg-[#f9fafb]!': route.name === 'Home',
       'bg-white': route.name !== 'Home',
       'pb-6!': isTaskOrMentorPage,
       'border-b border-secondary-light': isChatOrSettingsPage,

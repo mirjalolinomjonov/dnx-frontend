@@ -13,7 +13,7 @@ const essenceOfAssessment = [
 
 <template>
   <AppHeader />
-  <div class="p-8 max-h-[calc(100dvh-116px)] overflow-y-auto flex gap-6">
+  <div class="p-6 md:p-8 max-h-[calc(100dvh-116px)] overflow-y-auto flex gap-6">
     <div class="bg-white rounded-base h-full">
       <VideoContainer />
       <div class="p-6 space-y-6">

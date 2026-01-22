@@ -44,7 +44,7 @@ const isActive = (routeName: RouteRecordName): boolean => {
 
 <template>
   <aside
-    class="p-8 w-63 bg-white"
+    class="p-6 md:p-8 w-63 bg-white"
     :class="isChatOrSettingsPage && 'border-r border-secondary-light'"
   >
     <router-link to="/" class="w-47 h-10 block">

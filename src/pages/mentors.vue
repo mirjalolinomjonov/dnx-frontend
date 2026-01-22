@@ -9,7 +9,7 @@ import AppHeader from '@/components/AppHeader.vue'
 <template>
   <AppHeader />
   <AppHeaderFilter placeholder="Search  Mentors" />
-  <div class="p-8 space-y-8 max-h-[calc(100dvh-192px)] overflow-y-auto min-w-0">
+  <div class="p-6 md:p-8 space-y-8 max-h-[calc(100dvh-192px)] overflow-y-auto min-w-0">
     <SwiperLayout title="Recent Mentors" :slides-per-view="3.3">
       <swiper-slide v-for="item in 20" :key="item">
         <MentorItem />

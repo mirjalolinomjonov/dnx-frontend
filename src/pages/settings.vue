@@ -94,8 +94,8 @@ const saveSettings = async (settings: Settings): Promise<void> => {
 
 <template>
   <AppHeader />
-  <div class="p-8 max-h-[calc(100dvh-117px)] overflow-y-auto">
-    <Card class="p-8">
+  <div class="p-6 md:p-8 max-h-[calc(100dvh-117px)] overflow-y-auto">
+    <Card class="p-6 md:p-8">
       <Tabs @tab="onHandle" />
       <div class="max-w-100 space-y-16 mt-8">
         <General

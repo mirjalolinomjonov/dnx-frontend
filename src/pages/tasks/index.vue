@@ -9,7 +9,7 @@ import AppHeader from '@/components/AppHeader.vue'
 <template>
   <AppHeader />
   <AppHeaderFilter placeholder="Search Task" />
-  <div class="p-8 space-y-8 max-h-[calc(100dvh-192px)] overflow-y-auto">
+  <div class="p-6 md:p-8 space-y-8 max-h-[calc(100dvh-192px)] overflow-y-auto">
     <SwiperLayout title="Time Limit" :slides-per-view="3.3">
       <swiper-slide v-for="item in 20" :key="item">
         <TaskItem :id="item" />

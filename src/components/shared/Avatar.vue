@@ -31,6 +31,7 @@ function onError(e: Event) {
     class="cursor-pointer rounded-full flex-center-center overflow-hidden bg-gray-100 text-sm font-medium text-secondary-400"
   >
     <img
+      loading="lazy"
       @error="onError"
       v-if="url && !hasError"
       :src="url"

@@ -23,7 +23,7 @@ const isMine = computed(() => props.msg.senderId === currentUser.id)
       "
     >
       <figure v-if="msg.file?.url" class="h-35.25 rounded-[5px] overflow-hidden mb-3 bg-gray-200">
-        <img :src="msg.file?.url" alt="img" class="w-full h-full object-cover" />
+        <img loading="lazy" :src="msg.file?.url" alt="img" class="w-full h-full object-cover" />
       </figure>
       {{ msg.text }}
     </div>

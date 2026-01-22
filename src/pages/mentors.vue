@@ -4,6 +4,9 @@ import SwiperLayout from '@/components/SwiperLayout.vue'
 import { SwiperSlide } from 'swiper/vue'
 import MentorItem from '@/components/MentorItem.vue'
 import AppHeader from '@/components/AppHeader.vue'
+
+// DB
+import { mentorsMock } from '@/db/mentors.db'
 </script>
 
 <template>
@@ -14,19 +17,17 @@ import AppHeader from '@/components/AppHeader.vue'
     </div>
     <div class="p-6 md:p-8 space-y-8 min-w-0">
       <SwiperLayout title="Recent Mentors" :slides-per-view="3.3">
-        <swiper-slide v-for="item in 20" :key="item">
-          <MentorItem />
+        <swiper-slide v-for="item in mentorsMock" :key="item.id">
+          <MentorItem :mentor="item" />
         </swiper-slide>
       </SwiperLayout>
 
       <section>
         <h2 class="title-xl text-secondary-500 mb-5">Mentors</h2>
         <div class="mentors-section">
-          <MentorItem v-for="item in 5" :key="item">
+          <MentorItem :mentor="item" v-for="item in mentorsMock" :key="item.id">
             <p class="my-6 text-secondary-300 font-medium leading-[200%] line-clamp-2">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus quo eaque enim
-              perspiciatis, sapiente voluptatum tempora itaque ullam et tenetur velit nesciunt esse
-              doloremque officiis! Ipsum maiores rem ratione repellat?
+              {{ item.bio }}
             </p>
           </MentorItem>
         </div>

@@ -65,3 +65,11 @@ input[type='search']::-webkit-search-results-decoration {
   border-radius: 50%;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}

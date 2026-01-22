@@ -1,24 +1,15 @@
 <script setup lang="ts">
-defineProps<{ modelValue: number }>()
-
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: number): void
-}>()
-
-function onInput(e: Event) {
-  emit('update:modelValue', (e.target as HTMLInputElement).valueAsNumber)
-}
+defineProps<{ progress: number }>()
 </script>
 
 <template>
   <input
-    @input="onInput"
-    :value="modelValue"
+    :value="progress"
     class="custom-range"
     type="range"
     min="0"
     max="100"
-    :style="{ '--value': modelValue + '%' }"
+    :style="{ '--value': progress + '%' }"
   />
 </template>
 

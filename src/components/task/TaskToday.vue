@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import { inject } from 'vue'
+import type { ITask } from '@/types/tasks.type'
+
 import AppButton from '../shared/AppButton.vue'
 import TaskDetail from './TaskDetail.vue'
 import TaskItem from './TaskItem.vue'
+
+const data: ITask = inject('taskToday') as ITask
 </script>
 
 <template>
@@ -14,7 +19,7 @@ import TaskItem from './TaskItem.vue'
       </button>
     </div>
     <div class="space-y-8 mb-14">
-      <TaskItem :id="98" class="p-0!" />
+      <TaskItem :data="data" class="p-0!" />
       <hr class="text-secondary-light" />
       <TaskDetail />
     </div>

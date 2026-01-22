@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import { useRoute } from 'vue-router'
 
 import WelcomeHeader from '@/components/WelcomeHeader.vue'
@@ -11,6 +11,10 @@ import SwiperLayout from '@/components/SwiperLayout.vue'
 import { SwiperSlide } from 'swiper/vue'
 import LineChart from '@/components/shared/LineChart.vue'
 import HomeRightSidebar from '@/components/HomeRightSidebar.vue'
+
+// DB
+import { mentorsMock } from '@/db/mentors.db'
+import { tasksMock } from '@/db/tasks.db'
 
 // COMPOSABLES
 const route = useRoute()
@@ -61,6 +65,9 @@ const isHome = computed(() => route.name === 'Home')
 const title = computed<string>(() => {
   return (route.meta.headerTitle as string) || userName
 })
+
+// PROVIDE
+provide('taskToday', tasksMock[0])
 </script>
 
 <template>
@@ -75,13 +82,13 @@ const title = computed<string>(() => {
         </section>
 
         <SwiperLayout title="Monthly Mentors" :breakpoints="breakpoints">
-          <swiper-slide v-for="item in 20" :key="item">
-            <MentorItem />
+          <swiper-slide v-for="item in mentorsMock" :key="item.id">
+            <MentorItem :mentor="item" />
           </swiper-slide>
         </SwiperLayout>
         <SwiperLayout title="Upcoming Task" :breakpoints="breakpoints">
-          <swiper-slide v-for="item in 20" :key="item">
-            <TaskItem :id="item" />
+          <swiper-slide v-for="item in tasksMock" :key="item.id">
+            <TaskItem :data="item" />
           </swiper-slide>
         </SwiperLayout>
       </div>

@@ -29,7 +29,7 @@ const onInput = (e: Event) => {
       :placeholder="placeholder || 'Search...'"
       autocomplete="off"
     />
-    <AppIcon name="search" />
+    <AppIcon name="search" class="shrink-0" />
   </label>
 </template>
 

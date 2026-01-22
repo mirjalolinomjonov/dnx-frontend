@@ -43,7 +43,7 @@
   @apply font-semibold text-[16px] leading-[150%] tracking-[-2%];
 }
 .title-lg {
-  @apply font-semibold text-[20px] leading-[150%];
+  @apply font-semibold text-[18px] md:text-[20px] leading-[150%];
 }
 .title-xl {
   @apply font-semibold text-[24px] leading-[150%] tracking-[-3%];
@@ -55,6 +55,9 @@
   @apply font-semibold text-[38px] leading-[150%] tracking-[-3%];
 }
 
+.text-thin {
+  @apply font-normal text-[12px] leading-[200%];
+}
 .text {
   @apply font-medium text-[12px] leading-[100%] tracking-[-2%];
 }

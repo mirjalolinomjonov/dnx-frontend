@@ -3,10 +3,10 @@ import AppButton from '../shared/AppButton.vue'
 </script>
 
 <template>
-  <Card class="w-93! shrink-0 space-y-6 h-full">
+  <Card class="w-full md:w-93! shrink-0 space-y-6 h-full">
     <h5 class="title-base font-semibold! text-secondary-500">Assigned Assignments</h5>
     <section>
-      <h2 class="title-xl text-secondary-500 mb-3">Creating Awesome Mobile Apps</h2>
+      <h2 class="title-lg md:title-xl text-secondary-500 mb-3">Creating Awesome Mobile Apps</h2>
       <p class="text-base text-secondary-400">UI UX Design . Apps Design</p>
     </section>
 

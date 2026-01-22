@@ -41,8 +41,8 @@ const timezoneOptions: TimezoneOption[] = [
 ]
 
 const timeFormatOptions: TimeFormatOption[] = [
-  { value: TimeFormat.TwentyFourHours, label: '24 hours', example: '14:30' },
-  { value: TimeFormat.TwelveHours, label: '12 hours', example: '2:30 PM' },
+  { value: TimeFormat.TwentyFourHours, label: '24 Hours', example: '14:30' },
+  { value: TimeFormat.TwelveHours, label: '12 Hours', example: '2:30 PM' },
 ]
 
 const localLanguage = computed<Language>({

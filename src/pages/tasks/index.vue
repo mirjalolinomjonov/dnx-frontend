@@ -7,20 +7,24 @@ import AppHeader from '@/components/AppHeader.vue'
 </script>
 
 <template>
-  <AppHeader />
-  <AppHeaderFilter placeholder="Search Task" />
-  <div class="p-6 md:p-8 space-y-8 max-h-[calc(100dvh-192px)] overflow-y-auto">
-    <SwiperLayout title="Time Limit" :slides-per-view="3.3">
-      <swiper-slide v-for="item in 20" :key="item">
-        <TaskItem :id="item" />
-      </swiper-slide>
-    </SwiperLayout>
+  <div class="max-h-dvh overflow-y-auto">
+    <div class="sticky top-0 z-100 border-b border-b-secondary-light md:border-none">
+      <AppHeader />
+      <AppHeaderFilter placeholder="Search Task" />
+    </div>
+    <div class="p-6 md:p-8 space-y-8">
+      <SwiperLayout title="Time Limit" :slides-per-view="3.3">
+        <swiper-slide v-for="item in 20" :key="item">
+          <TaskItem :id="item" />
+        </swiper-slide>
+      </SwiperLayout>
 
-    <SwiperLayout title="New Task" :slides-per-view="3.3">
-      <swiper-slide v-for="item in 20" :key="item">
-        <TaskItem :id="item" />
-      </swiper-slide>
-    </SwiperLayout>
+      <SwiperLayout title="New Task" :slides-per-view="3.3">
+        <swiper-slide v-for="item in 20" :key="item">
+          <TaskItem :id="item" />
+        </swiper-slide>
+      </SwiperLayout>
+    </div>
   </div>
 </template>
 

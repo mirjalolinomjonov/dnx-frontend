@@ -135,7 +135,7 @@ const links = [
     @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
     ref="videoContainer"
-    class="relative w-full h-90 rounded-base bg-gray-200 cursor-pointer group"
+    class="relative w-full h-52 md:h-90 rounded-base bg-gray-200 cursor-pointer group"
   >
     <video ref="video" class="w-full h-full object-cover rounded-base">
       <source :src="links[1]" type="video/mp4" />
@@ -156,7 +156,7 @@ const links = [
         @volume-change="onVolumeChange"
         @fullscreen="onFullscreen"
         @picture-in-picture="onPictureInPicture"
-        class="absolute z-10 bottom-6 left-6 max-w-[calc(100%-48px)]"
+        class="absolute z-10 bottom-3 md:bottom-6 left-3 md:left-6 md:max-w-[calc(100%-48px)] max-w-[calc(100%-24px)]"
       />
     </transition>
   </div>

@@ -96,12 +96,12 @@ watch(
 </script>
 
 <template>
-  <Card class="py-3 px-6">
-    <div class="flex-center-between gap-10">
-      <div class="grow flex-center gap-6">
+  <Card class="py-2 px-3 md:py-3 md:px-6">
+    <div class="flex-center-between gap-3 md:gap-10">
+      <div class="grow flex-center gap-2 md:gap-6">
         <button
           @click="toggleVideo"
-          class="w-5 text-secondary-400 hover:text-secondary-500 transition-colors"
+          class="shrink-0 w-5 text-secondary-400 hover:text-secondary-500 transition-colors"
         >
           <AppIcon v-if="isPlaying" name="pause" />
           <AppIcon v-else name="play" />
@@ -116,12 +116,12 @@ watch(
           step="0.1"
           :style="{ '--value': localTime + '%' }"
         />
-        <span class="text-sm font-medium whitespace-nowrap">
+        <span class="text-[12px] md:text-sm font-medium whitespace-nowrap">
           {{ currentTimeFormatted }}/{{ durationFormatted }}
         </span>
       </div>
 
-      <div class="flex-center gap-3">
+      <div class="flex-center gap-2 md:gap-3">
         <!-- Volume Control -->
         <div
           class="relative flex-center gap-2"
@@ -162,7 +162,7 @@ watch(
         <!-- Picture in Picture -->
         <button
           @click="handlePictureInPicture"
-          class="text-secondary-400 hover:text-secondary-500 transition-colors"
+          class="shrink-0 text-secondary-400 hover:text-secondary-500 transition-colors"
           title="Picture in Picture"
         >
           <AppIcon name="screen-flow" />
@@ -171,7 +171,7 @@ watch(
         <!-- Fullscreen -->
         <button
           @click="handleFullscreen"
-          class="text-secondary-400 hover:text-secondary-500 transition-colors"
+          class="shrink-0 text-secondary-400 hover:text-secondary-500 transition-colors"
           title="Fullscreen"
         >
           <AppIcon name="screen-zoom" />

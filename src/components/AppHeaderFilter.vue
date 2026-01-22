@@ -6,9 +6,9 @@ defineProps<{ placeholder?: string }>()
 </script>
 
 <template>
-  <div class="flex-center-between bg-white px-8 pb-8">
+  <div class="flex-center-between gap-x-6 bg-white px-6 pb-6 md:px-8 md:pb-8">
     <SearchInput :placeholder="placeholder" />
-    <div class="flex-center gap-6">
+    <div class="hidden md:flex-center md:gap-6">
       <AppButton variant="outline" class="border-base flex-center">
         <AppIcon name="category" class="mr-2 shrink-0" />
         Category
@@ -18,6 +18,9 @@ defineProps<{ placeholder?: string }>()
         Sort By: Deadline
       </AppButton>
     </div>
+    <AppButton variant="outline" class="shrink w-13! border-base flex-center">
+      <AppIcon name="filter-settings" class="shrink-0" />
+    </AppButton>
   </div>
 </template>
 

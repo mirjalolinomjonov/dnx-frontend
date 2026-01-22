@@ -49,9 +49,9 @@ const isActive = (routeName: RouteRecordName): boolean => {
   >
     <router-link to="/" class="w-47 h-10 block">
       <AppIcon name="logo" />
-      <!-- <AppIcon name="logo-mark" /> -->
-      <!-- <AppIcon name="panel-toggle" /> -->
     </router-link>
+
+    <!-- MENU -->
     <ul class="pt-15 flex-col h-full gap-6 max-h-[calc(100vh-104px)] overflow-y-auto w-full">
       <li v-for="item in menuList" :key="item.name">
         <router-link

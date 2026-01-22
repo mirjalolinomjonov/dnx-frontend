@@ -112,7 +112,7 @@ const saveSettings = async (settings: Settings): Promise<void> => {
 
         <!-- Save Button -->
         <AppButton
-          class="max-w-54"
+          class="md:max-w-54"
           @click="handleSave"
           :disabled="!state.hasChanges || state.isSaving"
         >

@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-200: #bac8ff;
+  --color-primary-300: #04a4f4;
+  --color-primary-500: #546fff;
+
+  --color-secondary-light: #f5f5f7;
+  --color-secondary-50: #fafafa;
+  --color-secondary-100: #9c9ca4;
+  --color-secondary-300: #8e92bc;
+  --color-secondary-400: #54577a;
+  --color-secondary-500: #141522;
+
+  --radius-base: 10px;
+}
+
+.flex-center {
+  @apply flex items-center;
+}
+.flex-center-center {
+  @apply flex items-center justify-center;
+}
+.flex-center-between {
+  @apply flex items-center justify-between;
+}
+.flex-col {
+  @apply flex flex-col;
+}
+.inline-flex-center {
+  @apply inline-flex items-center;
+}
+.inline-flex-center-center {
+  @apply inline-flex items-center justify-center;
+}
+
+.title-base {
+  @apply font-medium text-[14px] leading-[150%] tracking-[-2%];
+}
+.title {
+  @apply font-semibold text-[16px] leading-[150%] tracking-[-2%];
+}
+.title-lg {
+  @apply font-semibold text-[20px] leading-[150%];
+}
+.title-xl {
+  @apply font-semibold text-[24px] leading-[150%] tracking-[-3%];
+}
+.title-2xl {
+  @apply font-semibold text-[32px] leading-[150%] tracking-[-3%];
+}
+.title-3xl {
+  @apply font-semibold text-[38px] leading-[150%] tracking-[-3%];
+}
+
+.text {
+  @apply font-medium text-[12px] leading-[100%] tracking-[-2%];
+}
+.text-base {
+  @apply font-medium text-sm leading-[150%] tracking-[-2%];
+}
+.circle-outline-btn {
+  @apply cursor-pointer border border-solid  w-13 h-13 rounded-full grid place-content-center;
+}
+
+.border-base {
+  @apply border border-solid border-secondary-light;
+}
+
+.chat-item {
+  @apply py-2 px-3 bg-white rounded-base font-medium! text-secondary-500 max-w-[52%];
+}

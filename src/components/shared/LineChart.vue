@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <Card class="bg-secondary-light! grow p-5!">
+  <Card class="bg-secondary-light! p-5!">
     <div class="flex-center-between mb-5">
       <h3 class="title text-secondary-500">Activity</h3>
       <select class="text text-secondary-500 outline-none">

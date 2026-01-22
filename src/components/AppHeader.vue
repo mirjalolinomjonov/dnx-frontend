@@ -27,15 +27,16 @@ const isTaskOrMentorPage = computed(() => {
   <header
     class="flex-center-between p-8"
     :class="{
+      'bg-white lg:bg-transparent!': route.name === 'Home',
       'bg-white': route.name !== 'Home',
       'pb-6!': isTaskOrMentorPage,
       'border-b border-secondary-light': isChatOrSettingsPage,
     }"
   >
-    <!-- <span class="circle-outline-btn border-border">
+    <span class="md:hidden! circle-outline-btn border-base">
       <AppIcon name="burger" />
-    </span> -->
-    <WelcomeHeader :title="title" :is-show-subtitle="isHome" />
+    </span>
+    <WelcomeHeader class="hidden md:block" :title="title" :is-show-subtitle="isHome" />
     <div class="flex-center gap-6">
       <span class="circle-outline-btn border-base">
         <AppIcon name="notif" />

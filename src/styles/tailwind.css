@@ -13,6 +13,8 @@
   --color-secondary-500: #141522;
 
   --radius-base: 10px;
+
+  --breakpoint-2md: 57.5rem;
 }
 
 .flex-center {

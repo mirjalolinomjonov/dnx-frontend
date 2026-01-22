@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from 'vue'
 import ChatTextarea from '@/components/chat/ChatTextarea.vue'
-import MsgItem from '@/components/chat/MsgItem.vue'
-import ChatItemHeader from '@/components/ChatItemHeader.vue'
+import ChatMessageItem from '@/components/chat/ChatMessageItem.vue'
+import ChatItemHeader from '@/components/chat/ChatItemHeader.vue'
 import type { IMsg } from '@/types/chat.type'
 
 import { messages as initialMessages } from '@/db/chat.db'
@@ -73,7 +73,7 @@ onMounted(() => {
           Today
         </span>
       </div>
-      <MsgItem v-for="msg in messages" :key="msg.id" :msg="msg" />
+      <ChatMessageItem v-for="msg in messages" :key="msg.id" :msg="msg" />
     </div>
 
     <ChatTextarea @send="onSend" />

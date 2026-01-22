@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppHeader from '@/components/AppHeader.vue'
-import ChatItem from '@/components/ChatItem.vue'
+import ChatItem from '@/components/chat/ChatItem.vue'
 
 import SearchInput from '@/components/shared/SearchInput.vue'
 </script>

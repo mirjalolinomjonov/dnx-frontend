@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import AvatarGroup from './shared/AvatarGroup.vue'
-import ProgressBar from './shared/ProgressBar.vue'
+import AvatarGroup from '../shared/AvatarGroup.vue'
+import ProgressBar from '../shared/ProgressBar.vue'
 
 defineProps<{ id: number }>()
 

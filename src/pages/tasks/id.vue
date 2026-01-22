@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppHeader from '@/components/AppHeader.vue'
-import TaskDetailAside from '@/components/TaskDetailAside.vue'
+import TaskDetailAside from '@/components/task/TaskDetailAside.vue'
 import VideoContainer from '@/components/video/VideoContainer.vue'
 
 const essenceOfAssessment = [

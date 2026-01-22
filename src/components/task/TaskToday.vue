@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppButton from './shared/AppButton.vue'
+import AppButton from '../shared/AppButton.vue'
 import TaskDetail from './TaskDetail.vue'
 import TaskItem from './TaskItem.vue'
 </script>

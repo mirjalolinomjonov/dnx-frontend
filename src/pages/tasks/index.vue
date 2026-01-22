@@ -2,7 +2,7 @@
 import AppHeaderFilter from '@/components/AppHeaderFilter.vue'
 import SwiperLayout from '@/components/SwiperLayout.vue'
 import { SwiperSlide } from 'swiper/vue'
-import TaskItem from '@/components/TaskItem.vue'
+import TaskItem from '@/components/task/TaskItem.vue'
 import AppHeader from '@/components/AppHeader.vue'
 </script>
 

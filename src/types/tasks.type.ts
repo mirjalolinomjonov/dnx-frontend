@@ -7,4 +7,5 @@ export interface ITask {
   image: string
   members: number
   users: string[]
+  video_src: string
 }

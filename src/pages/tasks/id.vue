@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import AppHeader from '@/components/AppHeader.vue'
 import TaskDetailAside from '@/components/task/TaskDetailAside.vue'
 import VideoContainer from '@/components/video/VideoContainer.vue'
@@ -9,32 +10,42 @@ const essenceOfAssessment = [
   'Designing a mobile application using figma',
   'Presenting the design flow',
 ]
+
+const route = useRoute()
+// DB
+import { tasksMock } from '@/db/tasks.db'
+import { useRoute } from 'vue-router'
+
+const task = computed(() => {
+  const id = Number(route.params.id)
+  return tasksMock.find((item) => item.id === id)
+})
 </script>
 
 <template>
   <div class="max-h-dvh overflow-y-auto">
     <AppHeader class="sticky top-0 z-100" />
-    <div class="p-6 md:p-8 flex flex-col gap-6">
+    <div class="p-6 md:p-8 flex flex-col xl:flex-row! gap-6">
       <div class="bg-white rounded-base h-full">
-        <VideoContainer />
+        <VideoContainer :url="task?.video_src as string" />
         <div class="p-6 space-y-6">
           <!-- title -->
           <section>
-            <h2 class="title-xl md:title-3xl text-secondary-500">Creating Awesome Mobile Apps</h2>
+            <h2 class="title-xl md:title-3xl text-secondary-500">{{ task?.title }}</h2>
             <div class="flex-center gap-2.5 my-4">
               <span class="text-secondary-400 text md:title-base pr-2.5 border-r border-[#dfdfdf]">
-                UI UX Design . Apps Design
+                {{ task?.category }}
               </span>
               <span class="text-primary-300 title-base">+ Get Mentors</span>
             </div>
             <div class="flex-center gap-5">
               <span class="inline-flex-center gap-1.25 text md:title-base text-secondary-500">
                 <AppIcon name="users" />
-                200 Students Involved
+                {{ task?.members }} Students Involved
               </span>
               <span class="inline-flex-center gap-1.25 text md:title-base text-secondary-500">
                 <AppIcon name="clock" size="16px" />
-                1 Hour
+                {{ task?.time }}
               </span>
             </div>
           </section>

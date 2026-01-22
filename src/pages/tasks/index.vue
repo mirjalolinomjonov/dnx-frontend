@@ -23,7 +23,7 @@ import { tasksMock } from '@/db/tasks.db'
       </SwiperLayout>
 
       <SwiperLayout title="New Task" :slides-per-view="3.3">
-        <swiper-slide v-for="item in tasksMock" :key="item.id">
+        <swiper-slide v-for="item in tasksMock.reverse()" :key="item.id">
           <TaskItem :data="item" />
         </swiper-slide>
       </SwiperLayout>

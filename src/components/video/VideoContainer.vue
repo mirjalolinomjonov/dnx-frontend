@@ -2,6 +2,8 @@
 import { ref, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import VideoController from './VideoController.vue'
 
+defineProps<{ url: string }>()
+
 const video = ref<HTMLVideoElement | null>(null)
 const videoContainer = ref<HTMLDivElement | null>(null)
 
@@ -122,11 +124,6 @@ onBeforeUnmount(() => {
   video.value.removeEventListener('play', handlePlay)
   video.value.removeEventListener('pause', handlePause)
 })
-
-const links = [
-  'https://www.w3schools.com/html/movie.mp4',
-  'https://www.w3schools.com/html/mov_bbb.mp4',
-]
 </script>
 
 <template>
@@ -138,7 +135,7 @@ const links = [
     class="relative w-full h-52 md:h-90 rounded-base bg-gray-200 cursor-pointer group"
   >
     <video ref="video" class="w-full h-full object-cover rounded-base">
-      <source :src="links[1]" type="video/mp4" />
+      <source :src="url" type="video/mp4" />
       Your browser does not support HTML video.
     </video>
     <transition name="fade">

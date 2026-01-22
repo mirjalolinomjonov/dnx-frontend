@@ -8,6 +8,7 @@ export const tasksMock: ITask[] = [
     progress: 90,
     time: '1 Hour',
     image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9',
+    video_src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     members: 4,
     users: [
       'https://i.pravatar.cc/150?img=1',
@@ -24,6 +25,7 @@ export const tasksMock: ITask[] = [
     progress: 85,
     time: '2 Hour',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+    video_src: 'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4',
     members: 5,
     users: [
       'https://i.pravatar.cc/150?img=5',
@@ -38,6 +40,7 @@ export const tasksMock: ITask[] = [
     progress: 100,
     time: '1 Hour',
     image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee',
+    video_src: 'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.mp4',
     members: 6,
     users: [
       'https://i.pravatar.cc/150?img=9',
@@ -53,6 +56,7 @@ export const tasksMock: ITask[] = [
     progress: 70,
     time: '3 Hour',
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f',
+    video_src: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     members: 3,
     users: ['https://i.pravatar.cc/150?img=9', 'https://i.pravatar.cc/150?img=10'],
   },
@@ -63,6 +67,7 @@ export const tasksMock: ITask[] = [
     progress: 75,
     time: '3 Days Left',
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
+    video_src: 'https://download.blender.org/durian/trailer/sintel_trailer-720p.mp4',
     members: 5,
     users: [
       'https://i.pravatar.cc/150?img=45',
@@ -78,6 +83,7 @@ export const tasksMock: ITask[] = [
     progress: 85,
     time: '4 Days Left',
     image: 'https://images.unsplash.com/photo-1504691342899-a7b40e3e68b4',
+    video_src: 'https://mango.blender.org/wp-content/content/downloads/TearsOfSteel_400.mp4',
     members: 4,
     users: [
       'https://i.pravatar.cc/150?img=39',
@@ -92,6 +98,7 @@ export const tasksMock: ITask[] = [
     progress: 65,
     time: '3 Days Left',
     image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d',
+    video_src: 'https://mango.blender.org/wp-content/content/downloads/TearsOfSteel_720p.mp4',
     members: 6,
     users: ['https://i.pravatar.cc/150?img=9', 'https://i.pravatar.cc/150?img=10'],
   },
@@ -102,6 +109,8 @@ export const tasksMock: ITask[] = [
     progress: 50,
     time: '1 Day Left',
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    video_src:
+      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
     members: 2,
     users: ['https://i.pravatar.cc/150?img=17', 'https://i.pravatar.cc/150?img=28'],
   },

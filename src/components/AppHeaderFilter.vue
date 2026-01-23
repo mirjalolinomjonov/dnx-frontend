@@ -1,13 +1,26 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import AppButton from './shared/AppButton.vue'
 import SearchInput from './shared/SearchInput.vue'
 
-defineProps<{ placeholder?: string }>()
+const props = defineProps<{ placeholder?: string; query: string }>()
+const emit = defineEmits<{
+  (e: 'update:query', value: string): void
+}>()
+
+const query = computed<string>({
+  get() {
+    return props.query
+  },
+  set(value: string) {
+    emit('update:query', value)
+  },
+})
 </script>
 
 <template>
   <div class="flex-center-between gap-x-6 bg-white px-6 pb-6 md:px-8 md:pb-8">
-    <SearchInput :placeholder="placeholder" />
+    <SearchInput v-model="query" :placeholder="placeholder" />
     <div class="hidden 2md:flex 2md:gap-4 lg:gap-6">
       <AppButton variant="outline" class="border-base flex-center">
         <AppIcon name="category" class="mr-2 shrink-0" />

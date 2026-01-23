@@ -2,10 +2,12 @@
 import { debounce } from '@/utils/debounce'
 
 defineProps<{ placeholder?: string }>()
+const model = defineModel<string>()
 
 // METHODS
 const search = (value: string) => {
   console.log('API call:', value)
+  model.value = value
 }
 
 const debouncedSearch = debounce(search, 500)
@@ -28,6 +30,7 @@ const onInput = (e: Event) => {
       id="search"
       :placeholder="placeholder || 'Search...'"
       autocomplete="off"
+      :value="model"
     />
     <AppIcon name="search" class="shrink-0" />
   </label>
